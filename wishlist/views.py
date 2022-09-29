@@ -17,8 +17,8 @@ def show_wishlist(request):
     data_barang_wishlist = BarangWishlist.objects.all()
     context = {
         'list_barang': data_barang_wishlist,
-        'nama': 'Fernando',
         'last_login': request.COOKIES['last_login'],
+        'pemilik': request.user,
     }
     return render(request, "wishlist.html",context)
 
